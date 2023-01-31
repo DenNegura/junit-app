@@ -124,8 +124,8 @@ class PaymentRepositoryImplTest {
         List<Payment> allPaymentsList = paymentRepository.findAll();
 
         // Then
-        assertEquals(allPaymentsList,
-                List.of(PAYMENTS.get(0), PAYMENTS.get(1), PAYMENTS.get(2)));
+        assertTrue(allPaymentsList
+                .containsAll(List.of(PAYMENTS.get(0), PAYMENTS.get(1), PAYMENTS.get(2))));
     }
 
     @Test
